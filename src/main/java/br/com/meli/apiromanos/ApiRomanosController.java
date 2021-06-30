@@ -8,8 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApiRomanosController {
 
     @RequestMapping("/romanos/{numero}")
-    public String endPoint1(@PathVariable Integer numero) {
-        return converteRomano(numero);
+    public String endPoint1(@PathVariable String numero) {
+        int n = 0;
+
+        try {
+            n = Integer.parseInt(numero);
+        } catch (NumberFormatException e) {
+            return "Não é possível converter strings.";
+        }
+
+        return converteRomano(n);
     }
 
     private String converteRomano(Integer n) {
