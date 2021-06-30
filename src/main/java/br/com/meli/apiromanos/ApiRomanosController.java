@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class MeuController {
+public class ApiRomanosController {
 
     @RequestMapping("/romanos/{numero}")
     public String endPoint1(@PathVariable Integer numero) {
